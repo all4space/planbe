@@ -7,6 +7,8 @@ public interface HistoryMapper {
 	public String getCodeContent(int cODENO);
 
 	public String getCdContent(HistoryVO history);
+
+	public void addHistory(HistoryVO history);
 	       
 	
 }

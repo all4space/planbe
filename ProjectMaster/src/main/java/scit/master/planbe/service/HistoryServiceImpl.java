@@ -22,4 +22,8 @@ public class HistoryServiceImpl implements HistoryService{
 	public String getCdContent(HistoryVO history) {
 		return dao.getCdContent(history);
 	}
+	@Override
+	public void addHistory(HistoryVO history) {
+		dao.addHistory(history);
+	}
 }

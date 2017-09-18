@@ -13,4 +13,17 @@
 	select cdcontent from codedetail where codeno = #{CodeNo} and cdselect = #{CdSelect}
 </select>
 
+
+<insert id = "addHistory" parameterType="HistoryVO">
+	insert into history values
+	(
+		#{projectNo},
+		sysdate,
+		#{logContent},
+		#{CodeNo},
+		history_seq.nextval,
+		#{userNo}
+	)
+</insert>
+
 </mapper>

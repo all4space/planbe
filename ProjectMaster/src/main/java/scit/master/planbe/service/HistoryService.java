@@ -8,4 +8,6 @@ public interface HistoryService {
 
 	public String getCdContent(HistoryVO history);
 
+	public void addHistory(HistoryVO history);
+
 }
