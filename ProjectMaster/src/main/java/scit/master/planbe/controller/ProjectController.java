@@ -192,7 +192,7 @@ public class ProjectController {
         
         history.setLogContent(content);
         
-        service.addHistory(history);
+        historyService.addHistory(history);
         
         System.out.println(projectVo.toString());
         
