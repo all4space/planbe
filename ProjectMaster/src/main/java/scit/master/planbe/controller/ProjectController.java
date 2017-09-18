@@ -19,6 +19,7 @@ import scit.master.planbe.VO.HistoryVO;
 import scit.master.planbe.VO.MemberVO;
 import scit.master.planbe.VO.ProjectVO;
 import scit.master.planbe.VO.UsersVO;
+import scit.master.planbe.service.HistoryServiceImpl;
 import scit.master.planbe.service.MemberServiceImpl;
 import scit.master.planbe.service.ProjectServiceImpl;
 import scit.master.planbe.service.UsersServiceImpl;
@@ -26,6 +27,9 @@ import scit.master.planbe.service.UsersServiceImpl;
 @RequestMapping("/project")
 @Controller
 public class ProjectController {
+	
+	
+	private int CODENO = 1;
 	
 	@Autowired
 	ProjectServiceImpl service;
@@ -35,6 +39,9 @@ public class ProjectController {
 	
 	@Autowired
 	MemberServiceImpl memberService;
+	
+	@Autowired
+	HistoryServiceImpl historyService;
 	
 	//프로젝트 삭제
 	@RequestMapping(value = "projectDelete", method = RequestMethod.GET)
@@ -162,13 +169,22 @@ public class ProjectController {
 		}
         
         HistoryVO history = new HistoryVO();
-        history.setProjectNo(projectVo.getProjectNo());
-        String content = "a프로젝트가 새성되었습니다 를셀렉트로불러봐";
-        history.setLogContent(content);
+        history.setProjectNo(memberVo.getProjectNo());
+        
+        //String content = "a프로젝트가 새성되었습니다 를셀렉트로불러봐";
+        
+        
         history.setCodeNo("1"); //생성이닊[
         history.setUserNo(memberVo.getUserNo());
         System.out.println(history.toString());
-        //service.addHistory(history);
+
+        
+        String content = session.getAttribute("loginId")  + "님이";
+        content += historyService.getCodeContent(CODENO);
+        
+        history.setLogContent(content);
+        
+        service.addHistory(history);
         
         System.out.println(projectVo.toString());
         

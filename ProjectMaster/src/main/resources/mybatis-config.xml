@@ -19,5 +19,6 @@
 			<mapper resource="mapper/Planmapper.xml" />
 			<mapper resource="mapper/Membermapper.xml" />
 			<mapper resource="mapper/Staticmapper.xml" />
+			<mapper resource="mapper/Historymapper.xml" />
 		</mappers>
 </configuration>
