@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import scit.master.planbe.VO.HistoryVO;
 import scit.master.planbe.VO.ProjectVO;
 import scit.master.planbe.VO.UsersVO;
 import scit.master.planbe.dao.ProjectDAOImpl;
@@ -76,6 +77,12 @@ public class ProjectServiceImpl implements ProjectService{
 	@Override
 	public void projectUpdate(ProjectVO projectList) {
 		dao.projectUpdate(projectList);
+	}
+	@Override	
+	public int addHistory(HistoryVO history) {
+		
+		return dao.addHistory(history);
+		
 	}
 
 }

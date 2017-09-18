@@ -13,4 +13,6 @@ public interface MemberMapper {
 	public ArrayList<MemberVO> getMyProject(String userId);
 	
 	public ArrayList<Integer> getProjectNo(String userId);
+
+	public ArrayList<MemberVO> getMemberList(int projectNo);
 }

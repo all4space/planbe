@@ -12,6 +12,7 @@ public interface MemberService {
 	
 	public HashMap<String,Object> getProjectList(String userId);
 	public ArrayList<Integer> getProjectNo(String userId);
+	public ArrayList<MemberVO> getMemberList(int projectNo);
 
 
 }

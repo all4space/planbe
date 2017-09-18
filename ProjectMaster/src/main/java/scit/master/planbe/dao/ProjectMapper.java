@@ -2,6 +2,7 @@ package scit.master.planbe.dao;
 
 import java.util.ArrayList;
 
+import scit.master.planbe.VO.HistoryVO;
 import scit.master.planbe.VO.MemberVO;
 import scit.master.planbe.VO.ProjectVO;
 import scit.master.planbe.VO.TaskVO;
@@ -32,4 +33,5 @@ public interface ProjectMapper {
 	public ProjectVO getProjectInfo(int projectNo);
 	public String getGroupName(String userId);
 	public void projectUpdate(ProjectVO projectList);
+	public int addHistory(HistoryVO history);
 }

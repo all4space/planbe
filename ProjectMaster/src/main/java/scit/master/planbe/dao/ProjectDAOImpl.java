@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import scit.master.planbe.VO.HistoryVO;
 import scit.master.planbe.VO.MemberVO;
 import scit.master.planbe.VO.ProjectVO;
 import scit.master.planbe.VO.TaskVO;
@@ -94,6 +95,12 @@ public class ProjectDAOImpl implements ProjectDAO{
 		public void projectUpdate(ProjectVO projectList) {
 			ProjectMapper mapper = sqlSession.getMapper(ProjectMapper.class);
 			mapper.projectUpdate(projectList);
+		}
+
+		public int addHistory(HistoryVO history) {
+			ProjectMapper mapper = sqlSession.getMapper(ProjectMapper.class);
+			return mapper.addHistory(history);
+			
 		}
 
 

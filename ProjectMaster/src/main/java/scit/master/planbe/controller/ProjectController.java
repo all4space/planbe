@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import scit.master.planbe.VO.HistoryVO;
 import scit.master.planbe.VO.MemberVO;
 import scit.master.planbe.VO.ProjectVO;
 import scit.master.planbe.VO.UsersVO;
@@ -160,6 +161,14 @@ public class ProjectController {
         	memberService.MemberAdd(memberVo);
 		}
         
+        HistoryVO history = new HistoryVO();
+        history.setProjectNo(projectVo.getProjectNo());
+        String content = "a프로젝트가 새성되었습니다 를셀렉트로불러봐";
+        history.setLogContent(content);
+        history.setCodeNo("1"); //생성이닊[
+        history.setUserNo(memberVo.getUserNo());
+        System.out.println(history.toString());
+        //service.addHistory(history);
         
         System.out.println(projectVo.toString());
         

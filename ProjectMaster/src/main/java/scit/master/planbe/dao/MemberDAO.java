@@ -12,4 +12,5 @@ public interface MemberDAO
 	public ArrayList<MemberVO> getMyProject(String userId);
 	public ArrayList<ProjectVO> getProjectInfo(ArrayList<Integer> projectNo);
 	public ArrayList<Integer> getProjectNo(String userId);
+	public ArrayList<MemberVO> getMemberList(int projectNo);
 }

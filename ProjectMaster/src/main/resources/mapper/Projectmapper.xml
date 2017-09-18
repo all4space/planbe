@@ -77,4 +77,11 @@
 <delete id = "projectDelete" parameterType = "int">
 	delete from project where projectno = #{projectNo}
 </delete>
+
+<!-- 프젝넘버 멤버리스트-->
+<select id = "getMemberList" parameterType = "int" resultType = "MemberVO">
+	select * from member where projectno=#{projectNo}
+</select>
+
+
 </mapper>
