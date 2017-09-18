@@ -96,12 +96,4 @@ public class ProjectDAOImpl implements ProjectDAO{
 			ProjectMapper mapper = sqlSession.getMapper(ProjectMapper.class);
 			mapper.projectUpdate(projectList);
 		}
-
-		public int addHistory(HistoryVO history) {
-			ProjectMapper mapper = sqlSession.getMapper(ProjectMapper.class);
-			return mapper.addHistory(history);
-			
-		}
-
-
 }

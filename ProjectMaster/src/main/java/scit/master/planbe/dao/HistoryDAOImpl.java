@@ -5,6 +5,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import scit.master.planbe.VO.HistoryVO;
+
 
 @Repository
 public class HistoryDAOImpl implements HistoryDAO {
@@ -16,5 +18,10 @@ public class HistoryDAOImpl implements HistoryDAO {
 	public String getCodeContent(int CODENO) {
 		HistoryMapper mapper = Sqlsession.getMapper(HistoryMapper.class);
 		return mapper.getCodeContent(CODENO);
+	}
+	@Override
+	public String getCdContent(HistoryVO history) {
+		HistoryMapper mapper = Sqlsession.getMapper(HistoryMapper.class);
+		return mapper.getCdContent(history);
 	}
 }

@@ -103,6 +103,8 @@ public class ProjectController {
 	public ModelAndView projectAdd(HttpSession session, UsersVO userVo, 
 			ProjectVO projectVo, MemberVO memberVo, String memberList, String managerId) throws ParseException {
 		
+		String code = "a";
+		
 		String userId = (String) session.getAttribute("loginId");
 		projectVo.setUserNo(usersService.getUserNo(userId));
 
@@ -169,18 +171,24 @@ public class ProjectController {
 		}
         
         HistoryVO history = new HistoryVO();
+        
+        
         history.setProjectNo(memberVo.getProjectNo());
         
         //String content = "a프로젝트가 새성되었습니다 를셀렉트로불러봐";
         
-        
-        history.setCodeNo("1"); //생성이닊[
+        history.setCdSelect(code);
+        history.setCodeNo(CODENO);//생성이닊[
         history.setUserNo(memberVo.getUserNo());
+        
         System.out.println(history.toString());
 
         
         String content = session.getAttribute("loginId")  + "님이";
-        content += historyService.getCodeContent(CODENO);
+        content += historyService.getCodeContent(CODENO) + "을/를";
+        content += historyService.getCdContent(history) + "햇엉";
+        
+        System.out.println(content);
         
         history.setLogContent(content);
         

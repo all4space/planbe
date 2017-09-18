@@ -78,11 +78,5 @@ public class ProjectServiceImpl implements ProjectService{
 	public void projectUpdate(ProjectVO projectList) {
 		dao.projectUpdate(projectList);
 	}
-	@Override	
-	public int addHistory(HistoryVO history) {
-		
-		return dao.addHistory(history);
-		
-	}
 
 }

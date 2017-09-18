@@ -5,7 +5,8 @@ public class HistoryVO {
 	private int projectNo;
 	private String logTime;
 	private String logContent;
-	private String CodeNo;
+	private String CdSelect;
+	private int CodeNo;
 	private int UserNo;
 	public int getProjectNo() {
 		return projectNo;
@@ -25,10 +26,16 @@ public class HistoryVO {
 	public void setLogContent(String logContent) {
 		this.logContent = logContent;
 	}
-	public String getCodeNo() {
+	public String getCdSelect() {
+		return CdSelect;
+	}
+	public void setCdSelect(String cdSelect) {
+		CdSelect = cdSelect;
+	}
+	public int getCodeNo() {
 		return CodeNo;
 	}
-	public void setCodeNo(String codeNo) {
+	public void setCodeNo(int codeNo) {
 		CodeNo = codeNo;
 	}
 	public int getUserNo() {
@@ -39,12 +46,9 @@ public class HistoryVO {
 	}
 	@Override
 	public String toString() {
-		return "HistoryVO [projectNo=" + projectNo + ", logTime=" + logTime + ", logContent=" + logContent + ", CodeNo="
-				+ CodeNo + ", UserNo=" + UserNo + "]";
+		return "HistoryVO [projectNo=" + projectNo + ", logTime=" + logTime + ", logContent=" + logContent
+				+ ", CdSelect=" + CdSelect + ", CodeNo=" + CodeNo + ", UserNo=" + UserNo + "]";
 	}
-
-	
-	
 	
 	
 }

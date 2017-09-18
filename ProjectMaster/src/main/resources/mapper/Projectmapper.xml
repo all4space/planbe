@@ -83,5 +83,4 @@
 	select * from member where projectno=#{projectNo}
 </select>
 
-
 </mapper>
