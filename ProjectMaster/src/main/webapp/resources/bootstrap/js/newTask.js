@@ -1,6 +1,10 @@
 $(function(){
 	
+
+	
 	$("input[type=submit]").on("click",function(){
+		
+		var projectNo=$('input[name=projectNo]').val();
 			
 		var taskName=$('input[name=taskName]').val();
 		console.log(taskName);
@@ -12,8 +16,9 @@ $(function(){
 		console.log(dueDate);
 		
 		
-	
-		if (taskName.length <=0) {
+		if (projecNo.length <=0) {			
+			alert("프로젝트를 선택하세요");
+		}else if (taskName.length <=0) {
 			alert("업무이름을 입력하세요");
 			return false;
 		}else if(taskContent.length <=0){
@@ -28,5 +33,8 @@ $(function(){
 		}
 		
 	});
+	
+		
+
 	
 });
